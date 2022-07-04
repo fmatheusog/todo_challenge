@@ -1,7 +1,20 @@
 import express from 'express';
 
-const app = express();
+export default class App {
+  public express: express.Application;
 
-app.use(express.json());
+  constructor() {
+    this.express = express();
+    this.config();
+  }
 
-export default app;
+  private config() {
+    this.express.use(express.json());
+  }
+
+  public start(port: number | string = 3001) {
+    this.express.listen(port, () => {
+      console.log(`Server running at: http://localhost:${port}`);
+    })
+  }
+}
