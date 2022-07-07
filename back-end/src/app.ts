@@ -1,4 +1,5 @@
 import express from 'express';
+import TaskRoutes from './routes/task.routes';
 
 export default class App {
   public express: express.Application;
@@ -10,6 +11,9 @@ export default class App {
 
   private config() {
     this.express.use(express.json());
+
+    // Routes
+    this.express.use('/tasks', TaskRoutes);
   }
 
   public start(port: number | string = 3001) {
