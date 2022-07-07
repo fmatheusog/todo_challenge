@@ -8,4 +8,4 @@ const taskSchema = new Schema<ITask>({
 
 const mongooseTaskModel = model<ITask>('task', taskSchema);
 
-export default { taskSchema, mongooseTaskModel };
+export { taskSchema, mongooseTaskModel };
