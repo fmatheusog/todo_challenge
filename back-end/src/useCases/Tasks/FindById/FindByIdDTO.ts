@@ -1,3 +1,3 @@
 export default interface IFindByIdDTO {
-  id: number;
+  id: string;
 }
