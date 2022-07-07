@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose';
+import { model, Schema } from 'mongoose';
 import ITask from '../../../../entities/ITask';
 
 const taskSchema = new Schema<ITask>({
@@ -6,4 +6,6 @@ const taskSchema = new Schema<ITask>({
   completed: { type: Boolean, required: true },
 });
 
-export default taskSchema;
+const mongooseTaskModel = model<ITask>('task', taskSchema);
+
+export default { taskSchema, mongooseTaskModel };
