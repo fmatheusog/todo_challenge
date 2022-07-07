@@ -1,13 +1,10 @@
-version: '3.1'
+version: '3.8'
 
 services:
 
   mongo:
     container_name: mongo_container
-    image: mongo
+    image: mongo:5.0
     restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: bpf54600jf
     ports:
       - "27017:27017"
